@@ -7,6 +7,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
+import MessageScreen from '../screens/MessageScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -67,12 +68,30 @@ NotificationStack.navigationOptions = {
 
 NotificationStack.path = '';
 
+const MessageStack = createStackNavigator(
+  {
+    Message: MessageScreen,
+  },
+  config
+);
+
+MessageStack.navigationOptions = {
+  tabBarLabel: 'Message',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} name="ios-mail" />
+  ),
+};
+
+MessageStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   SearchStack,
   NotificationStack,
+  MessageStack,
 });
 
 tabNavigator.path = '';
 
 export default tabNavigator;
+
