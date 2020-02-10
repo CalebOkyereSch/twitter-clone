@@ -1,33 +1,19 @@
-// import React from 'react';
-// import { Text,View } from 'react-native';
-
-// export default function MessageScreen() {
- 
-//   return (
-//     <View>
-//       <Text style={{flex:1,justifyContent:'center', alignContent:'center'}}>
-//         Hello Messages
-//       </Text>
-//     </View>
-//   );
-// }
-
-// MessageScreen.navigationOptions = {
-//   title: 'Messages',
-// };
-
-
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import {View,Text,Image,StyleSheet} from 'react-native';
 
-export default function MessageScreen() {
-  /**
-   * Go ahead and delete ExpoConfigView and replace it with your content;
-   * we just wanted to give you a quick view of your config.
-   */
-  return <ExpoConfigView />;
+export default  MessageScreen=()=>{
+    return (
+      <View style={style.hello}>
+      <Text>Hello World</Text>
+    </View>
+    )
 }
 
-MessageScreen.navigationOptions = {
-  title: 'app.json',
-};
+const style= StyleSheet.create({
+  hello:{
+    flex:1,
+    backgroundColor:"red",
+    justifyContent:"center",
+    alignItems:"center"
+  }
+})
